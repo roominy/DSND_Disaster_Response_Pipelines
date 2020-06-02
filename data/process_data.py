@@ -105,7 +105,7 @@ def save_data(df, database_filename):
    
     engine = create_engine('sqlite:///{}'.format(database_filename))
     table_name = database_filename.split('/')[-1].split(".")[0]
-    df.to_sql(table_name, engine, index=False) 
+    df.to_sql(table_name, engine,if_exists='replace', index=False) 
 
 
 def main():
